@@ -1,0 +1,23 @@
+# Android Studio / Gradle temp files
+.gradle/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+*.ap_
+*.apk
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Temporary / Scratch tools
+.gemini/
+scratch/
+build_tools/
+find_rounded_stage_bg.py
+copy_images.py
+decode_manifest.py
+setup_and_build.py
+download_mingit.py
