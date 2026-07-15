@@ -30,26 +30,24 @@ public final class MainActivity extends AppCompatActivity {
 
         // Play Button Click Listener
         binding.btnPlay.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, StageSelectionActivity.class);
-            startActivity(intent);
+            if (adManager != null && adManager.isActive() && adManager.getAdItems() != null && !adManager.getAdItems().isEmpty()) {
+                // Pick a random game from the 5 recommended games
+                java.util.Random random = new java.util.Random();
+                AdManager.AdItem randomGame = adManager.getAdItems().get(random.nextInt(adManager.getAdItems().size()));
+                adManager.openGameOnStore(randomGame.asin);
+            } else {
+                Intent intent = new Intent(MainActivity.this, StageSelectionActivity.class);
+                startActivity(intent);
+            }
         });
 
         // Initialize AdManager to fetch the configuration (if the user wants to host cross-promotions)
         adManager = new AdManager(this);
         adManager.setOnStatusListener(isActive -> {
             LogAdStatus(isActive);
-            if (isActive && adManager.getAdItems() != null && !adManager.getAdItems().isEmpty()) {
-                binding.tvMoreGamesLabel.setVisibility(View.VISIBLE);
-                binding.rvRecommendedGames.setVisibility(View.VISIBLE);
-                binding.rvRecommendedGames.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-                RecommendedGamesAdapter adapter = new RecommendedGamesAdapter(adManager.getAdItems(), game -> {
-                    adManager.openGameOnStore(game.asin);
-                });
-                binding.rvRecommendedGames.setAdapter(adapter);
-            } else {
-                binding.tvMoreGamesLabel.setVisibility(View.GONE);
-                binding.rvRecommendedGames.setVisibility(View.GONE);
-            }
+            // Hide the bottom slider as requested (they shouldn't be listed there)
+            binding.tvMoreGamesLabel.setVisibility(View.GONE);
+            binding.rvRecommendedGames.setVisibility(View.GONE);
         });
         adManager.fetchConfig(CONFIG_JSON_URL);
     }
