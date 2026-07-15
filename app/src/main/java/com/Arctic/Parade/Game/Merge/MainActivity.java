@@ -15,7 +15,7 @@ public final class MainActivity extends AppCompatActivity {
     private AdManager adManager;
 
     // The user can host their JSON on GitHub and replace this URL with their raw GitHub Gist/Repository link
-    private static final String CONFIG_JSON_URL = "https://gist.githubusercontent.com/laourdani/437d9f1959cc6eb7e1be3627f7eb264c/raw/";
+    private static final String CONFIG_JSON_URL = "https://raw.githubusercontent.com/mohammedhamime05-blip/merge-mania-clean/main/config.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
