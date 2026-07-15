@@ -61,7 +61,7 @@ public final class StageSelectionActivity extends AppCompatActivity {
             final int stageId = stages.get(position);
             TextView textView = holder.itemView.findViewById(android.R.id.text1);
             textView.setText("Stage " + stageId);
-            textView.setTextColor(context.getResources().getColor(android.R.color.white, null));
+            textView.setTextColor(androidx.core.content.ContextCompat.getColor(context, android.R.color.white));
             textView.setGravity(android.view.Gravity.CENTER);
             textView.setBackgroundResource(R.drawable.rounded_stage_bg);
 
