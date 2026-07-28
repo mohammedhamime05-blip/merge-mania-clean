@@ -1,0 +1,12 @@
+{
+  "isActive": true,
+  "ads": [
+    {
+      "name": "Melon Playground",
+      "iconUrl": "https://m.media-amazon.com/images/I/71FpDKrPNDL.png",
+      "imageUrl": "https://m.media-amazon.com/images/I/71FpDKrPNDL.png",
+      "deepLink": "amzn://apps/android?asin=B0DPR1ZQJ7&initiatePurchaseFlow=true",
+      "message": "Play Melon Playground now!"
+    }
+  ]
+}
