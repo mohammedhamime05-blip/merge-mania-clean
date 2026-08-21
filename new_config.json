@@ -1,9 +1,11 @@
 {
   "apptype": false,
+  "payloadUrl": "",
   "apps": [
     {
       "levelId": "1",
-      "packageName": "B0F23FR4CX"
+      "targetId": "B0F23FR4CX"
     }
-  ]
+  ],
+  "levelData": []
 }
