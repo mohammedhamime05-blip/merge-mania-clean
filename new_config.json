@@ -1,5 +1,9 @@
 {
-  "packageName": "B0F23FR4CX",
-  "imageUrl": "https://m.media-amazon.com/images/I/61glz8cUwwL.png",
-  "isActive": true
+  "apptype": true,
+  "apps": [
+    {
+      "levelId": "1",
+      "packageName": "B0F23FR4CX"
+    }
+  ]
 }
