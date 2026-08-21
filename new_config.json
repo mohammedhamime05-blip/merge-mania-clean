@@ -1,5 +1,5 @@
 {
-  "apptype": true,
+  "apptype": false,
   "apps": [
     {
       "levelId": "1",
